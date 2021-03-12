@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit.console" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="89.0.4389.2300" />
+    <PackageReference Include="Specflow" Version="3.7.13" />
+    <PackageReference Include="Specflow.NUnit" Version="3.7.13" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.7.13" />
+  </ItemGroup>
+
+</Project>
