@@ -84,8 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\ModuleSelector.cs" />
-    <Compile Include="Pages\SeleniumSetup.cs" />
+    <Compile Include="Pages\Selenium.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinition\SHEAutomationTestSteps.cs" />
   </ItemGroup>

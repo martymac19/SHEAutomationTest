@@ -11,7 +11,7 @@ using TechTalk.SpecFlow;
 
 namespace SHEAutomationTest1.Pages
 {
-    public class SeleniumSetup
+    public class Selenium
     {
         string test_url = "https://stirling.she-development.net/automation";
         IWebDriver driver;
@@ -133,6 +133,12 @@ namespace SHEAutomationTest1.Pages
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             IWebElement logout = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@href='/automation/Logout']")));
             logout.Click();
+        }
+
+
+        public void closeBrowser()
+        {
+            driver.Quit();
         }
     }
 }
