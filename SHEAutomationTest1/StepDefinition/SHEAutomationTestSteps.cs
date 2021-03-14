@@ -11,7 +11,6 @@ namespace SHEAutomationTest1.StepDefinition
     public class SHEAutomationTestSteps
     {
         Selenium selenium = new Selenium();
-        IWebDriver driver;
 
         [Given(@"I open the SHEdevelopment homepage")]
         public void GivenIOpenTheSHEdevelopmentHomepage()
