@@ -6,7 +6,7 @@
     Verify record deleted
  
 @SHETest
-Scenario: Add new record
+Scenario: SHE Automation Test
     Given I open the SHEdevelopment homepage
     Then I successfully login
     Then I navigate to Air Emissions module

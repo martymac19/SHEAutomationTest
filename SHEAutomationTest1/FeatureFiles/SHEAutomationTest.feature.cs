@@ -75,14 +75,14 @@ namespace SHEAutomationTest1.FeatureFiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add new record")]
+        [NUnit.Framework.DescriptionAttribute("SHE Automation Test")]
         [NUnit.Framework.CategoryAttribute("SHETest")]
-        public virtual void AddNewRecord()
+        public virtual void SHEAutomationTest()
         {
             string[] tagsOfScenario = new string[] {
                     "SHETest"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new record", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SHE Automation Test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

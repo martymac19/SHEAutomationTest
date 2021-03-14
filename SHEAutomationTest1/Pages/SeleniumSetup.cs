@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
@@ -13,7 +14,6 @@ namespace SHEAutomationTest1.Pages
     public class SeleniumSetup
     {
         string test_url = "https://stirling.she-development.net/automation";
-        string createRecordURL = "https://stirling.she-development.net/automation/Environment/AirEmissions/Create#/information";
         IWebDriver driver;
 
         public void GoToURL()
@@ -64,48 +64,46 @@ namespace SHEAutomationTest1.Pages
 
         public void AddNewRecordBTN()
         {
-            //driver.Url = createRecordURL;
-
-            //IWebElement addNewRecord = driver.FindElement(By.XPath("//i[@class='fa fa-plus fa-inverse fa-lg']"));
-            //addNewRecord.Click();
+            IWebElement addNewRecord = driver.FindElement(By.XPath("//i[@class='fa fa-plus fa-inverse fa-lg']"));
+            addNewRecord.Click();
         }
 
         public void AddDescription()
         {
-            //IWebElement addDescription = driver.FindElement(By.Id("SheAirEmissions_Description"));
-            //addDescription.SendKeys("This is a test description");
+            IWebElement addDescription = driver.FindElement(By.Id("SheAirEmissions_Description"));
+            addDescription.SendKeys("Test description");
         }
 
         public void SelectDate()
         {
-            //IWebElement selectDate = driver.FindElement(By.Id("SheAirEmissions_SampleDate"));
-            //selectDate.SendKeys("12032021");
+            IWebElement selectDate = driver.FindElement(By.Id("SheAirEmissions_SampleDate"));
+            selectDate.SendKeys("12032021");
         }
 
         public void SaveAndClose()
         {
-            //IWebElement addNewRecord = driver.FindElement(By.XPath("//button[@value='Close']"));
-            //addNewRecord.Click();
+            IWebElement addNewRecord = driver.FindElement(By.XPath("//button[@value='Close']"));
+            addNewRecord.Click();
         }
 
         public void deleteRecord()
         {
-            //IWebElement clickCog =  driver.FindElements(By.XPath("//Button[@class='btn btn-large dropdown-toggle']"))[2];
-            //clickCog.Click();
+            IWebElement clickCog = driver.FindElements(By.XPath("//Button[@class='btn btn-large dropdown-toggle']"))[2];
+            clickCog.Click();
 
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            //IWebElement deleteRecord = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Delete")));
-            //deleteRecord.Click();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement deleteRecord = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Delete")));
+            deleteRecord.Click();
 
-            //IWebElement confirmDelete = driver.FindElement(By.XPath("//button[contains(text(), 'Confirm')]"));
-            //confirmDelete.Click();
+            IWebElement confirmDelete = driver.FindElement(By.XPath("//button[contains(text(), 'Confirm')]"));
+            confirmDelete.Click();
         }
 
-        private bool IsElementPresent(By by)
+        public bool IsElementPresent(By by)
         {
             try
             {
-                driver.FindElement(by);
+                IWebElement test1 = driver.FindElement(by);
                 return true;
             }
             catch (NoSuchElementException)
@@ -116,21 +114,17 @@ namespace SHEAutomationTest1.Pages
 
         public void verifyRecordDeleted()
         {
-            if (IsElementPresent(By.Id("element name")))
+            if (IsElementPresent(By.XPath("//a[@title='Test description']")))
             {
-                //do if exists
+                Console.WriteLine("Element exists");
             }
             else
             {
-                //do if does not exists
+                Console.WriteLine("Element does not exist");
             }
 
-            string text = "";
-
-            List<IWebElement> list = driver.FindElements(By.XPath("//*[contains(text(),'" + text + "')]"));
-            Assert.assertTrue("Text not found!", list.size() > 0);
         }
-
+          
         public void logout()
         {
             IWebElement clickUsername = driver.FindElement(By.Id("uservoice-activation"));
